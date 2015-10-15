@@ -53,13 +53,13 @@ table, th, td {
 			  }
 			else
 			  {
-					//Move image to uploads folder
+				//Move image to uploads folder
 				  move_uploaded_file($_FILES["file"]["tmp_name"],
 				  "uploads/".$image_name);
 				  echo "Stored in: " . "uploads/" .$image_name;
 				  echo "<br />";
 				  
-				  //Extract Photo image Details using exif
+				  //Extract Photo  Details using exif
 					$image = "uploads/" .$image_name;
 					$exif = exif_read_data($image, 0, true);
 					foreach ($exif as $key => $section) {
